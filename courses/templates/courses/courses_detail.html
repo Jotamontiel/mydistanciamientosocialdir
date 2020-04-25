@@ -1,0 +1,165 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Cursos{% endblock %}
+{% block content %}
+
+<!-- Entrada del Curso-->
+<section class="module bg-dark-60 portfolio-page-header" data-background="{% static 'courses/assets/images/portfolio/portfolio_header_bg.jpg' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3" style="background-color: rgba(0, 0, 0, 0.94);border: 5px solid black;border-radius: 30px;padding: 5px 5px 5px 5px;">
+          <h2 class="module-title font-alt">{{course.name}}</h2>
+          <div class="module-subtitle font-serif">{{course.shortcontent|safe}}</div>
+        </div>
+      </div>
+    </div>
+</section>
+<hr class="divider-d">
+<!-- Detalle del Curso-->
+<section class="module">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-md-8 col-lg-8">
+                <img src="{{course.image.url}}" alt="{{course.name}}"/>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-4">
+                <div class="work-details">
+                    <br>
+                    <h5 class="work-details-title font-alt">Detalles</h5>
+                    <ul>
+                        <li><strong>Nombre: </strong><span class="font-serif">{{course.name}}</span>
+                        </li>
+                        <li><strong>Sigla: </strong><span class="font-serif">{{course.initials}}</span>
+                        </li>
+                        <li><strong>Categoría: </strong><span class="font-serif"><a href="{% url 'courses' course.category.id %}#filter_section">{{course.category}}</a></span>
+                        </li>
+                        <li><strong>Encargado(s): </strong><span class="font-serif">{{course.managers}}</span>
+                        </li>
+                        <li><strong>Aprobado desde: </strong><span class="font-serif">{{course.created}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-12 col-lg-12">
+                <div class="work-details">
+                    <br>
+                    <h5 class="work-details-title font-alt">Descripción</h5>
+                    <hr class="divider-w mt-10 mb-20">
+                    <p>{{course.content|safe}}</p>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-12 col-lg-12">
+                <div class="work-details">
+                    <h5 class="work-details-title font-alt">Modalidades</h5>
+                    <hr class="divider-w mt-10 mb-20">
+                    <div class="panel-group" id="accordion">
+                        {% for modality in course.modality.all %}
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title font-alt">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#{{modality.pk}}">{{modality.name}}</a>
+                                    </h4>
+                                </div>
+                                <div class="panel-collapse collapse in" id="{{modality.pk}}">
+                                    <div class="panel-body">
+                                        <strong>Detalle Modalidad: </strong>
+                                        {{modality.content|safe}}
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <ul style="margin-left:15px;">
+                                                {% if modality.state != None %}
+                                                    <li>
+                                                        <strong>Estado: </strong><span class="font-serif">{{modality.state}}</span>
+                                                    </li>
+                                                {% endif %}
+                                                {% if modality.duration != None %}
+                                                    <li>
+                                                        <strong>Duración: </strong><span class="font-serif">{{modality.duration}}</span>
+                                                    </li>
+                                                {% endif %}
+                                                {% if modality.period != None %}
+                                                    <li>
+                                                        <strong>Período: </strong><span class="font-serif">{{modality.period}}</span>
+                                                    </li>
+                                                {% endif %}
+                                                {% if modality.inscribed != None and modality.quotas != None %}
+                                                    <li>
+                                                        <strong>Cantidad Inscritos / Cantidad Total Cupos: </strong><span class="font-serif">{{modality.inscribed}} / {{modality.quotas}}</span>
+                                                    </li>
+                                                {% endif %}
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <ul style="margin-left:15px;">
+                                                <li>
+                                                    <strong>Lugares de Impartición: </strong>
+                                                </li>
+                                            </ul>
+                                            {% for mylocation in modality.location.all %}
+                                                {% for location in location_list %}
+                                                    {% if mylocation.id == location.id %}
+                                                        <ul style="margin-left:15px;">
+                                                            {% if location.name != None %}
+                                                                <li>
+                                                                    <strong>Nombre: </strong><span class="font-serif">{{location.name}}</span>
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if location.address != None %}
+                                                                <li>
+                                                                    <strong>Dirección: </strong><span class="font-serif">{{location.address}}</span>
+                                                                </li>
+                                                            {% endif %}
+                                                            {% if location.image %}
+                                                                <li>
+                                                                    <img src="{{location.image.url}}" alt="{{location.name}}" width="400"/>
+                                                                </li>
+                                                            {% endif %}
+                                                            <li><br></li>
+                                                        </ul>
+                                                    {% endif %}
+                                                {% endfor %}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr class="divider-w">
+<!-- Cursos Relacionados-->
+{% if hidd %}
+    <section class="module">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h2 class="module-title font-alt">Relacionados</h2>
+                </div>
+            </div>
+            <ul class="works-grid works-grid-gut works-grid-3 works-hover-w" id="works-grid">
+                {% for aux_course in course_list %}
+                    {% if aux_course.pk != course.pk and aux_course.category == course.category %}
+                        <li class="work-item illustration webdesign">
+                            <a href="{% url 'course' aux_course.id aux_course.name|slugify %}">
+                                <div class="work-image">
+                                    <img src="{{aux_course.image.url}}" alt="{{aux_course.name}}"/>
+                                </div>
+                                <div class="work-caption font-alt">
+                                    <h3 class="work-title">{{aux_course.name}}</h3>
+                                    <div class="work-descr">{{aux_course.shortcontent|safe}}</div>
+                                </div>
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+{% endif %}
+
+{% endblock %}

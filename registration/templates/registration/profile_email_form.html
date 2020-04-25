@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Email{% endblock %}
+{% block content %}
+<style>.errorlist{color:red;} label{display:none}</style>
+<!--<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto mb-5">
+        <form action="" method="post">{% csrf_token %}
+          <h3 class="mb-4">Registro</h3>
+          {{ form.as_p }}
+          <p><input type="submit" class="btn btn-primary btn-block" value="Confirmar"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>-->
+<section class="module bg-dark-30" data-background="assets/images/section-4.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <h1 class="module-title font-alt mb-0">Registrate - Registro</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="module">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <h4 class="font-alt">Email</h4>
+        <hr class="divider-w mb-10">
+        <form class="form" action="" method="post">{% csrf_token %}
+          {{ form.as_p }}
+          <div class="form-group">
+            <button class="btn btn-block btn-round btn-b">Actualizar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

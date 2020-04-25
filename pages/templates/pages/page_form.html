@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Crear página{% endblock %}
+{% block content %}
+{% include 'pages/includes/pages_menu.html'%}
+<!--<main role="main">
+  <div class="container">
+    <div class="row mt-3 mb-10">
+      <div class="col-md-9 mx-auto">
+        <form action="" method="post">{% csrf_token %}
+          {{ form.as_p }}
+          <div class="text-center">
+            <input type="submit" class="btn btn-primary btn-block" value="Crear página" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>-->
+<section class="module">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+        <form action="" method="post">{% csrf_token %}
+          {{ form.as_p }}
+          <div class="text-center">
+            <input type="submit" class="btn btn-primary btn-block" value="Crear página" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

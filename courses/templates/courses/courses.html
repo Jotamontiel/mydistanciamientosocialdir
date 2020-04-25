@@ -1,0 +1,87 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Cursos{% endblock %}
+{% block content %}
+
+<!-- Intro-->
+<section class="module bg-dark-60 portfolio-page-header" data-background="{% static 'courses/assets/images/portfolio/portfolio_header_bg.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6" style="text-align:center;padding: 0% 0% 5% 0%">
+                <img src="{% static 'core/assets/images/complemento.jpg' %}" width="330" style="border-radius: 100%;border-style: double;border-width: 20px;border-color: black;">
+            </div>
+            <div class="col-sm-6" style="background-color: rgba(0, 0, 0, 0.9);border: 5px solid black;border-radius: 80px;padding: 25px 25px 25px 25px;">
+                <br>
+                <h2 class="module-title font-alt"><b>Nuestros Proyectos</b></h2>
+                <div class="module-subtitle font-serif" style="text-align:justify;font-size: 17px;">
+                    &emsp;&emsp;&emsp;A continuación encontrarás nuestra galería de proyectos disponibles, los cuales pueden ser impartidos de forma particular y/o en 
+                    establecimientos, también por cada proyecto podrá acceder al detalle junto a una breve descripción de este...
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<hr class="divider-d">
+<!-- Cursos-->
+<section id="filter_section" class="module pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                {% if idcategoryaux %}
+                    <ul class="filter font-alt">
+                        {% for category in category_list %}
+                            {% if category.id == idcategoryaux %}
+                                <li><a class="wow fadeInUp" data-wow-delay="0.4s">{{category.name}}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                        {% if numberCoursesFlag %}
+                            <li><a class="wow fadeInUp" href="{% url 'courses' %}#filter_section" data-wow-delay="0.4s">MÁS CATEGORÍAS</a></li>
+                        {% endif %}
+                    </ul>
+                {% else %}
+                    <ul class="filter font-alt" id="filters">
+                        <li><a class="current wow fadeInUp" href="#" data-filter="*">Todo</a></li>
+                        {% for category in category_list %}
+                            <li><a class="wow fadeInUp" href="#" data-filter=".{{category.name}}" data-wow-delay="0.4s">{{category.name}}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <ul class="works-grid works-grid-gut works-hover-w works-grid-3" id="works-grid">
+        {% if idcategoryaux %}
+            {% for course in course_list %}
+                {% if  course.category.id == idcategoryaux %}
+                    <li class="work-item {{course.category}}">
+                        <a href="{% url 'course' course.id course.name|slugify %}">
+                            <div class="work-image">
+                                <img src="{{course.image.url}}" alt="{{course.name}}"/>
+                            </div>
+                            <div class="work-caption font-alt">
+                                <h3 class="work-title">{{course.name}}</h3>
+                                <div class="work-descr">{{course.shortcontent|safe}}</div>
+                            </div>
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% for course in course_list %}
+                <li class="work-item {{course.category}}">
+                    <a href="{% url 'course' course.id course.name|slugify %}">
+                        <div class="work-image">
+                            <img src="{{course.image.url}}" alt="{{course.name}}"/>
+                        </div>
+                        <div class="work-caption font-alt">
+                            <h3 class="work-title">{{course.name}}</h3>
+                            <div class="work-descr">{{course.shortcontent|safe}}</div>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</section>
+
+{% endblock %}
