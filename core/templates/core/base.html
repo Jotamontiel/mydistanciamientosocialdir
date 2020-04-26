@@ -8,7 +8,7 @@
     Document Title
     =============================================
     -->
-    <title>IOT CHILE CO. | {% block title %}{% endblock %}</title>
+    <title>Distanciamiento Social | {% block title %}{% endblock %}</title>
     {% load static %}
     <!--  
     Favicons
@@ -76,18 +76,21 @@
               </span>
             </button>
             <a class="navbar-brand" href="{% url 'home' %}">
-              <div style="background-color: rgba(0, 0, 0, 1);border-radius:17px;border: 5px double white;padding: 4px 4px 2px 4px;">
-                <img src="{% static 'core/assets/images/logo_home.jpg' %}" width="35" height="5" style="float:left;border-radius:50%;border-style: double;border-width: 5px;border-color: white;"><b style="font-size: 140%;margin-left:0.5em;font-size: 15px;line-height: 2.5;letter-spacing: 1px;">  IoT Chile Co.</b>
+              <div style="background-color: rgba(0, 0, 0, 1);border-radius:17px;border: 3px double white;padding: 4px 4px 2px 4px;">
+                <img src="{% static 'core/assets/images/logo_home.jpg' %}" width="36" height="5" style="float:left;border-radius:50%;border-style: double;border-width: 5px;border-color: white;">
+                <b style="margin-left:0.5em; font-size:15px; line-height:2.5; letter-spacing:1px; text-transform:capitalize; color:red;">  
+                  Distanciamiento Social
+                </b>
               </div>
             </a>
           </div>
           <div class="collapse navbar-collapse" id="custom-collapse">
             <ul class="nav navbar-nav navbar-right">
               <li class="nav-item">
-                <a class="btn" href="https://www.instagram.com/iotchileco/?hl=es-la" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+                <a class="btn" href="https://www.instagram.com/jorge_montiel_montiel/?hl=es-la" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
               </li>
               <li class="nav-item">
-                <a class="btn" href="https://www.facebook.com/IOT-Chile-Co-2137016253207719/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+                <a class="btn" href="https://www.facebook.com/distanciamientosocialcl-105186354483477" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
               </li>
               <!--<li class="nav-item">
                 <a class="btn btn-border-d btn-circle" href="#" data-toggle="dropdown">Inscribete</a>
@@ -161,7 +164,7 @@
                 <div class="widget">
                   <h5 class="widget-title font-alt">Sobre IoT Chile Co.</h5>
                   <p style="text-align: justify;font-size:14px;">
-                      &nbsp;&nbsp;&nbsp;IOT CHILE CO. apunta a la investigación de nuevas 
+                      &nbsp;&nbsp;&nbsp;DIST. SOCIAL apunta a la investigación de nuevas 
                     tecnologías aplicadas a hogares e instituciones 
                     entregando herramientas para el desarrollo científico 
                     y tecnológico a lo largo del país.
@@ -175,10 +178,20 @@
                     </div>
                     <br>
                     <div style="font-size:14px">
-                      <i class="fa fa-envelope" aria-hidden="true">  Correo:  <a href="#">jorgemontielmontiel@gmail.com</a></i>
+                      <i class="fa fa-envelope" aria-hidden="true">  Correo:  
+                        <a href="#">
+                          <br>
+                          <br>jorgemontielmontiel@gmail.com
+                        </a>
+                      </i>
                       <br>
-                      <i class="fa fa-address-card" aria-hidden="true">  Dirección:  <a href="#">
-                        Capellán Abarzúa 240 (Depto. N°410) Providencia, Santiago, Chile.
+                      <br>
+                      <i class="fa fa-address-card" aria-hidden="true">  Dirección:  
+                        <a href="#">
+                          <br>
+                          <br>Capellán Abarzúa 240
+                          <br>Providencia 
+                          <br>Santiago de Chile
                         </a>
                       </i>
                     </div>
@@ -229,12 +242,12 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-6">
-                <p class="copyright font-alt"><a href="{% url 'home' %}"><b>IOT CHILE CO.</b></a> &copy; 2020 all rights reserved - WebMaster: <a href="https://www.linkedin.com/in/jorge-montiel-montiel/" target="_blank"><b style="text-transform: capitalize;">Jorge Montiel.</b></a></p>
+                <p class="copyright font-alt"><a href="{% url 'home' %}"><b>DIST. SOCIAL</b></a> &copy; 2020 all rights reserved - WebMaster: <a href="https://www.linkedin.com/in/jorge-montiel-montiel/" target="_blank"><b style="text-transform: capitalize;">Jorge Montiel.</b></a></p>
               </div>
               <div class="col-sm-6">
                 <div class="footer-social-links">
-                  <a href="https://www.facebook.com/IOT-Chile-Co-2137016253207719/" target="_blank"><i class="fa fa-facebook"></i> IOT Chile Co.</a>
-                  <a href="https://www.instagram.com/iotchileco/?hl=es-la" target="_blank"><i class="fa fa-instagram"></i> iotchileco</a>
+                  <a href="https://www.facebook.com/IOT-Chile-Co-2137016253207719/" target="_blank"><i class="fa fa-facebook"></i> distanciamientosocial.cl</a>
+                  <a href="https://www.instagram.com/iotchileco/?hl=es-la" target="_blank"><i class="fa fa-instagram"></i> jorge_montiel_montiel</a>
                   <a href="#" target="_blank"><i class="fa fa-envelope-o"></i> jorgemontielmontiel@gmail.com</a>
                 </div>
               </div>
@@ -271,13 +284,13 @@
     <script>
       function myMap() {
         var mapCanvas1 = document.getElementById("googleMap");
-        var myCenter1 = new google.maps.LatLng(-33.033713,-71.486940);
+        var myCenter1 = new google.maps.LatLng(-33.4307387,-70.6310423);
         var mapOptions1 = {center: myCenter1, zoom: 16};
         var map1 = new google.maps.Map(mapCanvas1,mapOptions1);
         var marker1 = new google.maps.Marker({
           position: myCenter1,
           animation: google.maps.Animation.BOUNCE,
-          icon: "{% static 'core/assets/images/map-icon.png' %}"
+          icon: "{% static 'core/assets/images/map-icon.jpg' %}"
         });
         marker1.setMap(map1);
       }
