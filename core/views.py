@@ -59,7 +59,7 @@ class HomePageView(ListView):
         # AmountActivation [Finish]
 
         figure = folium.Figure()
-        m = folium.Map(width='100%',height='100%',location=[-33.4569397, -70.6482697], zoom_start=15, tiles='Stamen Toner')
+        m = folium.Map(width='100%',height='100%',location=[-33.4569397, -70.6482697], zoom_start=12, tiles='Stamen Toner')
         m.add_to(figure)
         # for item in context['core_list']:
         #     folium.Marker(location=[item.lat, item.lng], popup=item.title, icon=folium.Icon(icon='cloud')).add_to(m)
