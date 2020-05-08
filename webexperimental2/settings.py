@@ -135,20 +135,13 @@ STATICFILES_DIRS = [
 # LOGIN_REDIRECT_URL = 'pages:pages'
 LOGOUT_REDIRECT_URL = 'home'
 
-# Eliminar esto:
 # Emails
 if DEBUG:
     EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
     EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 else:
     # Aqui hay que configurar un email real para producción
-    # pass
-    # Dejar esto:
-    # Email config
-    EMAIL_HOST = 'smtp.mailtrap.io'
-    EMAIL_HOST_USER = 'de822d0210da95'
-    EMAIL_HOST_PASSWORD = '904153767558a2'
-    EMAIL_PORT = '2525'
+    
 
 # Media Config
 MEDIA_URL = '/media/'

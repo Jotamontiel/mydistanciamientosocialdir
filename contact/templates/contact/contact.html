@@ -8,14 +8,14 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-6" style="text-align:center;padding: 0% 0% 5% 0%">
-        <img src="{% static 'core/assets/images/complemento_contact.jpg' %}" width="330" style="border-radius: 100%;border-style: double;border-width: 20px;border-color: black;">
+        <img src="{% static 'core/assets/images/complemento_contact.jpg' %}" width="330" style="border-radius: 100%;border-style: double;border-width: 20px;border-color: white;">
       </div>
       <div class="col-sm-6" style="background-color: rgba(0, 0, 0, 0.85);border: 5px solid black;border-radius: 80px;padding: 25px 25px 25px 25px;">
         <br>
-        <h2 class="module-title font-alt"><b>Contactanos</b></h2>
+        <h2 class="module-title font-serif" style="text-transform: capitalize;font-size:400%;"><b>Contactanos</b></h2>
         <div class="module-subtitle font-serif" style="text-align:justify;font-size: 17px;">
-          &emsp;&emsp;&emsp;Queremos que tu experiencia con nosotros sea completamente agradable, por lo tanto, si tienes cualquier pregunta o sólo quieres ponerte en contacto con nosotros 
-          puedes hacerlo completando el formulario de más abajo o simpemente llamar al número asociado...
+          &emsp;&emsp;&emsp;Queremos que tu experiencia con nosotros sea completamente agradable, si tienes cualquier pregunta o sólo quieres ponerte en contacto con nosotros 
+          puedes hacerlo completando el formulario de más abajo o simpemente llamar al número asociado.
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@
         <h4 class="font-alt"><b>Formulario Contacto:</b></h4><br/>
         {% if 'ok' in request.GET %}
           <div class="form-group">
-            <p class="help-block text-danger" style="color:#1e7b1e;background:#99e699;padding: 20px 25px 20px 25px;border-radius: 15px"><b>Su mensaje se ha enviado correctamente, en breve nos pondremos en contacto con usted... <br> Nuestro equipo IOT CHILE CO le desea un buen día !!!</b></p>
+            <p class="help-block text-danger" style="color:#1e7b1e;background:#99e699;padding: 20px 25px 20px 25px;border-radius: 15px"><b>Su mensaje se ha enviado correctamente, en breve nos pondremos en contacto con usted... <br> Nuestro equipo de Dist. Social le desea un buen día !!!</b></p>
           </div>
         {% endif %}          
         <form action="" method="POST">

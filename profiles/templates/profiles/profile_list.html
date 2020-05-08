@@ -60,11 +60,18 @@
     </div>
   </div>
 </main>-->
-<section class="module bg-dark-60 shop-page-header" data-background="assets/images/shop/product-page-bg.jpg">
+<section class="module bg-dark-60 shop-page-header" data-background="{% static 'profiles/assets/images/profile_bg.jpg' %}">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <h2 class="module-title font-alt">Perfiles</h2>
+      <div class="col-sm-6" style="text-align:center;padding: 0% 0% 5% 0%">
+        <img src="{% static 'core/assets/images/complemento_profiles.jpg' %}" width="330" style="border-radius: 100%;border-style: double;border-width: 20px;border-color: black;">
+      </div>
+      <div class="col-sm-6" style="background-color: rgba(0, 0, 0, 0.9);border: 5px solid white;border-radius: 80px;padding: 25px 25px 25px 25px;">
+        <br>
+        <h2 class="module-title font-serif" style="font-size:400%;"><b>Cápsulas del Tiempo</b></h2>
+        <div class="module-subtitle font-serif" style="text-align:justify;font-size: 17px;">
+          &emsp;&emsp;&emsp;En esta sección se listan los participantes que han generado su respectiva cápsula del tiempo, para ver el contenido de cada participante sólo debe ingresar al detalle de su cápsula.
+        </div>
       </div>
     </div>
   </div>
