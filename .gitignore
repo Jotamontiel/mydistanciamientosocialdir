@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Settings ignore
+**/webexperimental2/settings.py
+
+# Migrations ignore
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py

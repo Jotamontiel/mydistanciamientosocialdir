@@ -19,8 +19,15 @@ from django.conf import settings
 from pages.urls import pages_patterns
 from profiles.urls import profiles_patterns
 from iotmodule.urls import iotmodule_patterns
+from registration_social import views
 
 urlpatterns = [
+
+       
+    path("login/", views.login, name="login"),
+    path('social-auth/', include('social_django.urls', namespace="social")),
+    path("", views.home, name="home"),
+
     # Display, Base, Home, About paths
     path('', include('core.urls')),
     # Services path
