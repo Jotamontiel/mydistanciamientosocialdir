@@ -22,11 +22,9 @@ from iotmodule.urls import iotmodule_patterns
 from registration_social import views
 
 urlpatterns = [
-
        
     path("login/", views.login, name="login"),
     path('social-auth/', include('social_django.urls', namespace="social")),
-    path("", views.home, name="home"),
 
     # Display, Base, Home, About paths
     path('', include('core.urls')),
@@ -54,6 +52,6 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Custom titles for admin
-admin.site.site_header = "IOT CHILE CO."
+admin.site.site_header = "DISTANCIAMIENTO SOCIAL"
 admin.site.index_title = "PANEL DE ADMINISTRACIÓN"
-admin.site.site_title = "IOT CHILE CO."
+admin.site.site_title = "DISTANCIAMIENTO SOCIAL"
