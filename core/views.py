@@ -3,6 +3,7 @@ from django.views.generic.list import ListView
 from django.shortcuts import render
 from courses.models import Category, Course
 from registration.models import Profile
+from capsules.models import Capsule
 import random
 import folium
 
@@ -14,7 +15,7 @@ class HomePageView(ListView):
     def get_context_data(self, **kwargs):
         context = super(HomePageView, self).get_context_data(**kwargs)
         context['course_list'] = Course.objects.all()
-        context['capsula_list'] = Profile.objects.all()
+        context['capsule_list'] = Capsule.objects.all()
 
         # Others Courses [Begin]
         if len(context['course_list']) < 3:
@@ -63,8 +64,9 @@ class HomePageView(ListView):
         figure = folium.Figure()
         m = folium.Map(width='100%',height='100%',location=[-33.4569397, -70.6482697], zoom_start=12, tiles='Stamen Toner')
         m.add_to(figure)
-        for item in context['capsula_list']:
-            folium.Marker(location=[item.lat, item.lng], popup=item.name, icon=folium.Icon(icon='cloud')).add_to(m)
+        for item in context['capsule_list']:
+            if item.lat and item.lng:
+                folium.Marker(location=[item.lat, item.lng], popup=item.name, icon=folium.Icon(icon='cloud')).add_to(m)
         figure = figure._repr_html_()
         context['map'] = figure
 

@@ -19,13 +19,9 @@ from django.conf import settings
 from pages.urls import pages_patterns
 from profiles.urls import profiles_patterns
 from iotmodule.urls import iotmodule_patterns
-from registration_social import views
+from capsules.urls import capsules_patterns
 
 urlpatterns = [
-       
-    path("login/", views.login, name="login"),
-    path('social-auth/', include('social_django.urls', namespace="social")),
-
     # Display, Base, Home, About paths
     path('', include('core.urls')),
     # Services path
@@ -34,6 +30,8 @@ urlpatterns = [
     path('', include('courses.urls')),
     # Pages path
     path('pages/', include(pages_patterns)),
+    # Capsules path
+    path('capsules/', include(capsules_patterns)),
     # Contact path
     path('', include('contact.urls')),
     # IotModule path
@@ -45,6 +43,7 @@ urlpatterns = [
     # Auth paths
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('registration.urls')),
+    path('social-auth/', include('social_django.urls', namespace="social")),
 ]
 
 if settings.DEBUG:

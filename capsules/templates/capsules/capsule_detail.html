@@ -1,0 +1,40 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}{{page.title}}{% endblock %}
+{% block content %}
+{% include 'capsules/includes/capsule_menu.html' %}
+<!--<main role="main">
+  <div class="container">
+    <div class="row mt-3">
+      <div class="col-md-9 mx-auto">
+        <h2 class="section-heading mb-4">{{page.title}}</h2>
+        <div>
+          {{page.content|safe}}
+          {% if request.user.is_staff %}
+            <p><a href="{% url 'pages:update' page.id %}">Editar</a></p>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</main>-->
+<section class="module-small">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="post">
+          <div class="post-header font-alt">
+            <h1 class="post-title">{{capsule.name}}</h1>
+          </div>
+          <div class="post-entry">
+            {{capsule.father_last_name}}
+            {% if request.user.is_staff %}
+              <p><a class="more-link" href="{% url 'capsules:update' capsule.id %}">Editar</a></p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
