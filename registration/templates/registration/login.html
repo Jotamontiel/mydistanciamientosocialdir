@@ -3,7 +3,7 @@
 {% block title %}Iniciar sesión{% endblock %}
 {% block content %}
 <style>.errorlist{color:red;}</style>
-<!--<main role="main">
+{% comment %} <main role="main">
   <div class="container">
     <div class="row mt-3">
       <div class="col-md-9 mx-auto mb-5">
@@ -31,41 +31,59 @@
       </div>
     </div>
   </div>
-</main>-->
-<section class="module bg-dark-30" data-background="assets/images/section-4.jpg">
+</main> {% endcomment %}
+<section class="module" data-background="{% static 'core/assets/images/login_bg.jpg' %}">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <h1 class="module-title font-alt mb-0">Iniciar Sesión - Acceso</h1>
+      <div class="col-md-6 col-md-offset-3" style="text-align:center;padding: 0% 0% 5% 0%">
+        <img src="{% static 'core/assets/images/complemento_about&profiles&login.jpg' %}" width="330" style="border-radius: 100%;border-style: double;border-width: 20px;border-color: black;">
+      </div>
+      <div class="col-md-6 col-md-offset-3" style="text-align:center">
+        <button class="btn btn-d btn-circle btn-lg col-md-6 col-md-offset-3">
+          <a href="#login_menu">
+            <h1 class="module-title font-alt mb-0" style="text-transform:none;font-weight:bold;font-size:180%;color:White;">
+              Click aquí <br> Iniciar Sesión
+            </h1>
+          </a>
+        </button>
       </div>
     </div>
   </div>
 </section>
-<section class="module">
+<hr class="divider-d mb-10">
+<section id="login_menu" class="module">
   <div class="container">
     <div class="row">
-      <div class="col-sm-5 col-sm-offset-1 mb-sm-40">
+      <div class="col-md-6 col-md-offset-3">
         {% if 'register' in request.GET %}
           <div class="alert alert-success" role="alert">
             <button class="close" type="button" data-dismiss="alert" aria-hidden="true">&times;</button><i class="fa fa-cog fa-spin"></i><strong>Alerta!</strong> Usuario registrado correctamente, ya puedes identificarte.
           </div>
         {% endif %}
-        <h4 class="font-alt">Iniciar sesión</h4>
-
-        <div class="col-md-8 mx-auto social-container my-2 order-md-1">
-            <button class="btn btn-danger  mb-2">
-                <a href="#">Login with Instagram</a>
-            </button>
-            <button class="btn btn-primary mb-2">
-                <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook
-                </a>
-            </button>
-            <button class="btn btn-info mb-2">
-                <a href="{% url 'social:begin' 'linkedin-oauth2' %}">Login with LinkedIn</a>
-            </button>
+        <div class="form-group">
+          <h4 class="font-alt text-center" style="text-transform:none;font-weight:bold;font-size:150%;color:black;">Iniciar sesión con redes sociales</h4>
+          <hr class="divider-d mb-10">
+          <button class="btn btn-danger btn-round btn-block" type="button">
+            <a href="#" style="font-weight:bold;font-size:130%;color:white;">
+              Accede con Instagram <i class="fa fa-instagram"></i>
+            </a>
+          </button>
+          <br>
+          <button class="btn btn-primary btn-round btn-block" type="button">
+            <a href="{% url 'social:begin' 'facebook' %}" style="font-weight:bold;font-size:130%;color:white;">
+              Accede con Facebook <i class="fa fa-facebook"></i>
+            </a>
+          </button>
+          <br>
+          <button class="btn btn-info btn-round btn-block" type="button">
+            <a href="{% url 'social:begin' 'linkedin-oauth2' %}" style="font-weight:bold;font-size:130%;color:white;">
+              Accede con LinkedIn <i class="fa fa-linkedin"></i>
+            </a>
+          </button>
         </div>
-
-        <hr class="divider-w mb-10">
+        <br>
+        <h4 class="font-alt text-center" style="text-transform:none;font-weight:bold;font-size:150%;color:black;">Iniciar sesión con Social Distance</h4>
+        <hr class="divider-d mb-10">
         <form class="form" action="" method="post">{% csrf_token %}
           {% if form.non_field_errors %}
             <div class="alert alert-danger" role="alert">
@@ -79,9 +97,13 @@
             <input class="form-control" id="id_password" type="password" name="password" required placeholder="Contraseña" style="text-transform:none"/>
           </div>
           <div class="form-group">
-            <button class="btn btn-round btn-b">Acceder</button>
+            <button class="btn btn-round btn-b btn-block" style="font-weight:bold;font-size:120%;color:white;">
+              Accede con Social Distance <i class="fa fa-cog fa-spin"></i>
+            </button>
           </div>
-          <div class="form-group">¿Has olvidado tu clave? Puedes restaurarla <a href="{% url 'password_reset' %}">aquí</a>.</div>
+          <div class="form-group text-center" style="font-size:140%;">
+            ¿Has olvidado tu clave?<br> Puedes restaurarla <a href="{% url 'password_reset' %}">Aquí</a>.
+          </div>
         </form>
       </div>
     </div>

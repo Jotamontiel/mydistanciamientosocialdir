@@ -3,7 +3,7 @@
 {% block title %}Registro{% endblock %}
 {% block content %}
 <style>.errorlist{color:red;} label{display:none}</style>
-<!--<main role="main">
+{% comment %} <main role="main">
   <div class="container">
     <div class="row mt-3">
       <div class="col-md-9 mx-auto mb-5">
@@ -15,36 +15,42 @@
       </div>
     </div>
   </div>
-</main>-->
-<section class="module bg-dark-30" data-background="assets/images/section-4.jpg">
+</main> {% endcomment %}
+<section class="module" data-background="{% static 'core/assets/images/login_bg.jpg' %}">
   <div class="container">
     <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <h1 class="module-title font-alt mb-0">Registrate - Registro</h1>
+      <div class="col-md-6 col-md-offset-3" style="text-align:center;padding: 0% 0% 5% 0%">
+        <img src="{% static 'core/assets/images/complemento_about&profiles&login.jpg' %}" width="330" style="border-radius: 100%;border-style: double;border-width: 20px;border-color: black;">
+      </div>
+      <div class="col-md-6 col-md-offset-3" style="text-align:center">
+        <button class="btn btn-d btn-circle btn-lg col-md-6 col-md-offset-3">
+          <a href="#register_menu">
+            <h1 class="module-title font-alt mb-0" style="text-transform:none;font-weight:bold;font-size:180%;color:White;">
+              Click aquí <br> Registrar
+            </h1>
+          </a>
+        </button>
       </div>
     </div>
   </div>
 </section>
-<section class="module">
+<hr class="divider-d mb-10">
+<section id="register_menu" class="module">
   <div class="container">
     <div class="row">
-      <div class="col-sm-5">
-        <h4 class="font-alt">Registro</h4>
-        <hr class="divider-w mb-10">
+      <div class="col-md-6 col-md-offset-3">
+        <h4 class="font-alt text-center" style="text-transform:none;font-weight:bold;font-size:150%;color:black;">Registrate con Social Distance</h4>
+        <hr class="divider-d mb-10">
         <form class="form" action="" method="post">{% csrf_token %}
           {{ form.as_p }}
-
-          <p>Click the button to get your coordinates.</p>
-          <button onclick="getLocation()">Try It</button>
-          <p id="demo"></p>
-
           <div class="form-group">
-            <button class="btn btn-block btn-round btn-b">Confirmar</button>
+            <button class="btn btn-round btn-b btn-block" style="font-weight:bold;font-size:120%;color:white;">
+              Registrar <i class="fa fa-cog fa-spin"></i>
+            </button>
           </div>
         </form>
       </div>
     </div>
   </div>
 </section>
-
 {% endblock %}

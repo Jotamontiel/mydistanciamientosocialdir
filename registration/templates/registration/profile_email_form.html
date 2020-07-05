@@ -3,7 +3,7 @@
 {% block title %}Email{% endblock %}
 {% block content %}
 <style>.errorlist{color:red;} label{display:none}</style>
-<!--<main role="main">
+{% comment %} <main role="main">
   <div class="container">
     <div class="row mt-3">
       <div class="col-md-9 mx-auto mb-5">
@@ -15,26 +15,22 @@
       </div>
     </div>
   </div>
-</main>-->
-<section class="module bg-dark-30" data-background="assets/images/section-4.jpg">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6 col-sm-offset-3">
-        <h1 class="module-title font-alt mb-0">Registrate - Registro</h1>
-      </div>
-    </div>
-  </div>
-</section>
+</main> {% endcomment %}
 <section class="module">
   <div class="container">
     <div class="row">
-      <div class="col-sm-5">
-        <h4 class="font-alt">Email</h4>
-        <hr class="divider-w mb-10">
+      <div class="col-md-6 col-md-offset-3">
+        <h4 class="font-alt text-center" style="text-transform:none;font-weight:bold;font-size:150%;color:black;">Actualizar Mi Email</h4>
+        <hr class="divider-d mb-10">
         <form class="form" action="" method="post">{% csrf_token %}
-          {{ form.as_p }}
+          <div class="form-group text-center" style="font-size:140%;">
+            <p>¿Quieres cambiar tu email? Actualice su email a continuación.</p>
+            {{ form.as_p }}
+          </div>
           <div class="form-group">
-            <button class="btn btn-block btn-round btn-b">Actualizar</button>
+            <button class="btn btn-round btn-b btn-block" style="font-weight:bold;font-size:120%;color:white;">
+              Actualizar Email <i class="fa fa-cog fa-spin"></i>
+            </button>
           </div>
         </form>
       </div>

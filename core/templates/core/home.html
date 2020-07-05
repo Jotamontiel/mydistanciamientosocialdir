@@ -131,10 +131,9 @@
     {% endif %}
   </div>
 </section>
-
 <hr class="divider-d">
 <section class="home-section home-fade home-full-height" id="home">
-{{map|safe}}
+<iframe id="encoder_iframe" height=100% width=100% src="{% url 'map_display' %}"></iframe>
 </section>
 
 <!-- Category Carousel-->
