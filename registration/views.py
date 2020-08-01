@@ -6,8 +6,11 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django import forms
 from .models import Profile
+from django.contrib.auth.models import User
+from capsules.models import Capsule
 from courses.models import Category, Course
 import random
+
 
 # Create your views here.
 class SignUpView(CreateView):
@@ -47,16 +50,20 @@ class SignUpView(CreateView):
 
         return context
 
+
 @method_decorator(login_required, name='dispatch')
 class ProfileUpdate(UpdateView):
     form_class = ProfileForm
-    success_url = reverse_lazy('profile')
     template_name = 'registration/profile_form.html'
 
     def get_object(self):
         # recuperar objeto que se va editar
         profile, created = Profile.objects.get_or_create(user=self.request.user)
         return profile
+    
+    def get_success_url(self):
+
+        return reverse_lazy('profile') + '?ok'
 
     def get_context_data(self, **kwargs):
         context = super(ProfileUpdate, self).get_context_data(**kwargs)
@@ -79,15 +86,26 @@ class ProfileUpdate(UpdateView):
 
         return context
 
+
+@method_decorator(login_required, name='dispatch')
+class ProfileDelete(DeleteView):
+    model = User
+    template_name = 'registration/profile_confirm_delete.html'
+    success_url = reverse_lazy('home')
+
+
 @method_decorator(login_required, name='dispatch')
 class EmailUpdate(UpdateView):
     form_class = EmailForm
-    success_url = reverse_lazy('profile')
     template_name = 'registration/profile_email_form.html'
 
     def get_object(self):
         # recuperar objeto que se va editar
         return self.request.user
+    
+    def get_success_url(self):
+
+        return reverse_lazy('profile') + '?ok'
 
     def get_form(self, form_class=None):
         form = super(EmailUpdate, self).get_form()

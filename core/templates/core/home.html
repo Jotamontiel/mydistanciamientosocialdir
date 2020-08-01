@@ -2,7 +2,6 @@
 {% load static %}
 {% block title %}Inicio{% endblock %}
 {% block content %}
-
 <!-- Home & Categorías-->
 <hr class="divider-d">
 <section class="home-section home-fade home-full-height" id="home">
@@ -135,7 +134,6 @@
 <section class="home-section home-fade home-full-height" id="home">
 <iframe id="encoder_iframe" height=100% width=100% src="{% url 'map_display' %}"></iframe>
 </section>
-
 <!-- Category Carousel-->
 {% if flag_section %}
   <hr class="divider-d">
@@ -164,5 +162,4 @@
     </div>
   </section>
 {% endif %}
-
 {% endblock %}

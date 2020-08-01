@@ -3,22 +3,7 @@
 {% block title %}{{page.title}}{% endblock %}
 {% block content %}
 {% include 'pages/includes/pages_menu.html' %}
-<!--<main role="main">
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col-md-9 mx-auto">
-        <h2 class="section-heading mb-4">{{page.title}}</h2>
-        <div>
-          {{page.content|safe}}
-          {% if request.user.is_staff %}
-            <p><a href="{% url 'pages:update' page.id %}">Editar</a></p>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-  </div>
-</main>-->
-<section class="module-small">
+{% comment %} <section class="module-small">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
@@ -36,5 +21,9 @@
       </div>
     </div>
   </div>
+</section> {% endcomment %}
+<section class="home-section home-fade home-full-height" id="home">
+  <iframe id="encoder_iframe" class='col-md-10 col-md-offset-1' height=80% width=100% src="{% url 'pages:newspaper_display' page.id page.title|slugify %}">
+  </iframe>
 </section>
 {% endblock %}

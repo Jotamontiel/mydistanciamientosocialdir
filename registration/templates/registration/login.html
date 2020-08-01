@@ -3,35 +3,6 @@
 {% block title %}Iniciar sesión{% endblock %}
 {% block content %}
 <style>.errorlist{color:red;}</style>
-{% comment %} <main role="main">
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col-md-9 mx-auto mb-5">
-        {% if 'register' in request.GET %}
-        <p style="color: green;">Usuario registrado correctamente, ya puedes identificarte.</p>
-        {% endif %}
-        <form action="" method="post">{% csrf_token %}
-          <h3 class="mb-4">Iniciar sesión</h3>
-          {% if form.non_field_errors %}
-            <p style="color:red">Usuario o contraseña incorrectos, prueba de nuevo.</p>
-          {% endif %}
-          <p>
-            <input type="text" name="username" autofocus maxlength="254" required
-              id="id_username" class="form-control" placeholder="Nombre de usuario" style="text-transform: lowercase"/>
-          </p>
-          <p>
-            <input type="password" name="password" required
-              id="id_password" class="form-control" placeholder="Contraseña" style="text-transform: lowercase"/>
-          </p>
-          <p><input type="submit" class="btn btn-primary btn-block" value="Acceder"></p>
-        </form>
-        <P>
-          ¿Ha olvidado su clave? Puede restaurarla <a href="{% url 'password_reset' %}">aquí</a>.
-        </P>
-      </div>
-    </div>
-  </div>
-</main> {% endcomment %}
 <section class="module" data-background="{% static 'core/assets/images/login_bg.jpg' %}">
   <div class="container">
     <div class="row">
@@ -98,13 +69,20 @@
           </div>
           <div class="form-group">
             <button class="btn btn-round btn-b btn-block" style="font-weight:bold;font-size:120%;color:white;">
-              Accede con Social Distance <i class="fa fa-cog fa-spin"></i>
+              Acceder <i class="fa fa-cog fa-spin"></i>
             </button>
           </div>
-          <div class="form-group text-center" style="font-size:140%;">
-            ¿Has olvidado tu clave?<br> Puedes restaurarla <a href="{% url 'password_reset' %}">Aquí</a>.
-          </div>
         </form>
+        <div class="form-group">
+          <a href="{% url 'signup' %}">
+            <button class="btn btn-round btn-b btn-block" style="font-weight:bold;font-size:120%;color:white;">
+              Registrarse <i class="fa fa-cog fa-spin"></i>
+            </button>
+          </a>
+        </div>
+        <div class="form-group text-center" style="font-size:140%;">
+          ¿Has olvidado tu contraseña?<br> Puedes restaurarla <a href="{% url 'password_reset' %}">Aquí</a>.
+        </div>
       </div>
     </div>
   </div>

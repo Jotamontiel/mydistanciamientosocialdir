@@ -1,0 +1,57 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Imágenes{% endblock %}
+{% block content %}
+{% include 'pages/includes/pages_menu.html' %}
+<section class="module">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        {% for pageimage in pageimage_list|dictsort:"id" reversed %}
+          <div class="post">
+            <div class="post-header font-alt">
+              <h2 class="post-title" >
+                Nombre: {{pageimage.name}} <br>
+                Tag principal: {{pageimage.tag}}
+              </h2>
+            </div>
+            <div class="post-more">
+              {% if request.user.is_staff %}
+                <a class="more-link" href="{% url 'pages:image_update' pageimage.id pageid %}">Actualizar Imágen</a>
+                | <a class="more-link" href="{% url 'pages:image_delete' pageimage.id %}">Borrar Imágen</a>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+        {% if is_paginated %}
+          <div class="pagination font-alt">
+            <ul class="pagination justify-content-center">
+              {% if page_obj.has_previous %}
+                <li class="page-item ">
+                  <a class="page-link" href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-angle-left"></i></a>
+                </li>
+              {% else %}
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">&laquo;</a>
+                </li>
+              {% endif %}
+              <li class="">
+                <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</span>
+              </li>
+              {% if page_obj.has_next %}
+                <li class="page-item ">
+                  <a class="page-link" href="?page={{ page_obj.next_page_number }}"><i class="fa fa-angle-right"></i></a>
+                </li>
+              {% else %}
+                <li class="page-item disabled">
+                  <a class="page-link" href="#" tabindex="-1">&raquo;</a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

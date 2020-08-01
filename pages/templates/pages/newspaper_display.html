@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es" >
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        SocialDistance
+    </title>
+    {% load static %}
+    <!-- Bootstrap ejemplo-->
+    {% comment %} <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=Playfair+Display+SC:wght@900&family=Playfair+Display:ital,wght@0,800;1,800&family=Manrope:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css'> {% endcomment %}
+    <link id="color-newspaper" href="{% static 'pages/css/newspaper/style.css' %}" rel="stylesheet">
+    <!-- Bootstrap agregado-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">    
+</head>
+
+<body style="background-image: url({% static 'core/assets/images/paper_fibers.png' %})">
+    <div class="main__wrapper">
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>
+                            Social<br>Distance News
+                        </h1>
+                        <aside> 
+                            <div>
+                                <div class="issue">
+                                    {{page.tag}}
+                                </div>
+                                <div class="date">
+                                    {{page.created.date}}
+                                </div>
+                                <div class="edition">
+                                    N° {{page.order}}
+                                </div>
+                            </div>
+                        </aside>
+                        <h2 style='text-align: center;'>{{page.title}}</h2>
+                        <h3 style='text-align: center;'>Resumen</h3>
+                        <div style='text-align: justify;'>
+                            {{page.summary|safe}}
+                        </div>
+                        <h3 style='text-align: center;'>Contenido</h3>
+                        <div style='text-align: justify;'>
+                            {{page.content|safe}}
+                        </div>
+                    </div>  
+                    <div class="col-md-12">
+                        {% if pageimage_list %}
+                            <h4>Imágenes</h4>
+                            {% for pageimage in pageimage_list %}
+                                <div>
+                                    <figure>
+                                        {% if pageimage.uploadlink %}
+                                            <img src="{{pageimage.uploadlink.url}}" alt="{{pageimage.name}}"/>
+                                        {% elif pageimage.link %}
+                                            <img src="{{pageimage.link.url}}" alt="{{pageimage.name}}"/>
+                                        {% else %}
+                                            <img src="{% static 'registration/img/no-avatar.jpg' %}" alt="{{pageimage.name}}"/>
+                                        {% endif %}
+                                        <figcaption>
+                                            {{pageimage.name}} | {{pageimage.tag}} | {{pageimage.created.date}}
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                    <div class="col-md-12">
+                        {% if pagevideo_list %}
+                            <h4>Videos</h4>
+                            {% for pagevideo in pagevideo_list %}
+                                <div>
+                                    <figure>
+                                        {% if pagevideo.link %}
+                                            <div class="post-video embed-responsive embed-responsive-16by9">
+                                                <iframe class="embed-responsive-item" src="{{pagevideo.link}}" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                                            </div>
+                                        {% else %}
+                                            <img src="{% static 'registration/img/no-avatar.jpg' %}" alt="{{pagevideo.name}}"/>
+                                        {% endif %}
+                                        <figcaption>
+                                            {{pagevideo.name}} | {{pagevideo.tag}} | {{pagevideo.description|safe}} | {{pagevideo.created.date}}
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Bootstrap ejemplo-->
+    {% comment %} <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script> {% endcomment %}
+    <!-- Bootstrap agregado jQuery library & Latest compiled JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

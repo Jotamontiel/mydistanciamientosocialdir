@@ -18,6 +18,7 @@ class Profile(models.Model):
     birth_date = models.DateField(verbose_name="Fecha Nacimiento", null=True, blank=True)
     gender = models.CharField(verbose_name="Género", max_length=15, null=True, blank=True)
     marital_status = models.CharField(verbose_name="Estado Civil", max_length=20, null=True, blank=True)
+    agreement = models.NullBooleanField(verbose_name="Acuerdo", null=True)
 
     class Meta:
         ordering = ['user__username']

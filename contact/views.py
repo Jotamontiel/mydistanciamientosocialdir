@@ -34,9 +34,9 @@ def contact(request):
             content = request.POST.get('content', '')
             # Enviamos el correo y redireccionamos
             email = EmailMessage(
-                "DISTANCIAMIENTO SOCIAL: Nuevo mensaje de contacto",
+                "SOCIAL DISTANCE: Nuevo mensaje de contacto",
                 "De {} <{}>\n\nTeléfono: {}\n\nEscribió: {}".format(name, email, phone, content),
-                "no-contestar@inbox.mailtrap.io",
+                "distanciamientosocial@gmail.com",
                 ["jorgemontielmontiel@gmail.com"],
                 reply_to=[email]
             )

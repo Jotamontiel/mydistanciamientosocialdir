@@ -19,11 +19,17 @@ class UserCreationFormWithEmail(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['avatar', 'bio', 'link']
+        fields = ['avatar', 'bio', 'link', 'rut', 'birth_date', 'gender', 'marital_status', 'agreement', 'user']
         widgets = {
             'avatar': forms.ClearableFileInput(attrs={'class':'form-control-file mt-3'}),
             'bio': forms.Textarea(attrs={'class':'form-control mt-3', 'rows':3, 'placeholder':'Biografía', 'style': 'text-transform:none'}),
             'link': forms.URLInput(attrs={'class':'form-control mt-3', 'placeholder':'Enlace', 'style': 'text-transform:none'}),
+            'rut': forms.TextInput(attrs={'class':'form-control mt-3', 'placeholder':'Rut', 'style': 'text-transform:none'}),
+            'birth_date': forms.DateInput(attrs={'class':'form-control mt-3 date', 'placeholder':'DD/MM/AAAA', 'style': 'text-transform:none'}),
+            'gender': forms.TextInput(attrs={'class':'form-control mt-3', 'placeholder':'Género', 'style': 'text-transform:none'}),
+            'marital_status': forms.TextInput(attrs={'class':'form-control mt-3', 'placeholder':'Estado Civil', 'style': 'text-transform:none'}),
+            'agreement': forms.NullBooleanSelect(attrs={'class':'form-control mt-3', 'placeholder':'Estado Acuerdo', 'style': 'text-transform:none', 'required': '2'}),
+            'user': forms.TextInput(attrs={'class':'form-control mt-3', 'placeholder':'Usuario', 'style': 'text-transform:none'}),
         }
 
 class EmailForm(forms.ModelForm):

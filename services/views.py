@@ -1,6 +1,6 @@
 from django.views.generic.list import ListView
 from django.shortcuts import render
-from .models import Service, Associated
+from .models import Service, Affiliated
 from courses.models import Category, Course
 import random
 
@@ -13,9 +13,10 @@ class ServicesListView(ListView):
         context = super(ServicesListView, self).get_context_data(**kwargs)
         context['course_list'] = Course.objects.all()
         context['category_list'] = Category.objects.all()
-        context['associated_list'] = Associated.objects.all()
+        context['affiliated_list'] = Affiliated.objects.all()
+        context['affiliated_amount'] = len(Affiliated.objects.all())
         context['hidd'] = False
-        if context['associated_list']:
+        if context['affiliated_list']:
             context['hidd'] = True
         else:
             context['hidd'] = False

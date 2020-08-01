@@ -3,19 +3,6 @@
 {% block title %}Registro{% endblock %}
 {% block content %}
 <style>.errorlist{color:red;} label{display:none}</style>
-{% comment %} <main role="main">
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col-md-9 mx-auto mb-5">
-        <form action="" method="post">{% csrf_token %}
-          <h3 class="mb-4">Registro</h3>
-          {{ form.as_p }}
-          <p><input type="submit" class="btn btn-primary btn-block" value="Confirmar"></p>
-        </form>
-      </div>
-    </div>
-  </div>
-</main> {% endcomment %}
 <section class="module" data-background="{% static 'core/assets/images/login_bg.jpg' %}">
   <div class="container">
     <div class="row">
@@ -45,10 +32,24 @@
           {{ form.as_p }}
           <div class="form-group">
             <button class="btn btn-round btn-b btn-block" style="font-weight:bold;font-size:120%;color:white;">
-              Registrar <i class="fa fa-cog fa-spin"></i>
+              Registrarme <i class="fa fa-cog fa-spin"></i>
             </button>
           </div>
         </form>
+        <div class="form-group">
+          <a href="{% url 'home' %}">
+            <button class="btn btn-round btn-b btn-block" style="font-weight:bold;font-size:120%;color:white;">
+              Ir al Inicio <i class="fa fa-cog fa-spin"></i>
+            </button>
+          </a>
+        </div>
+        <div class="form-group">
+          <a href="{% url 'login' %}">
+            <button class="btn btn-round btn-b btn-block" style="font-weight:bold;font-size:120%;color:white;">
+              Ir al Acceso <i class="fa fa-cog fa-spin"></i>
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   </div>

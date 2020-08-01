@@ -1,24 +1,8 @@
 {% extends 'core/base.html' %}
 {% load static %}
-{% block title %}Borrar página{% endblock %}
+{% block title %}Borrar Página{% endblock %}
 {% block content %}
 {% include 'pages/includes/pages_menu.html'%}
-<!--
-<main role="main">
-  <div class="container">
-    <div class="row mt-3 mb-10">
-      <div class="col-md-9 mx-auto">
-        <div>
-            <form action="" method="post">{% csrf_token %}
-                <p>¿Estás seguro de que quieres borrar <b>"{{ object }}"</b>?</p>
-                <input type="submit" class="btn btn-primary btn-block" value="Sí, borrar la página" />
-            </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</main>
--->
 <section class="module-small free-trial">
   <div class="container text-center">
     <form action="" method="post">{% csrf_token %}
@@ -30,7 +14,7 @@
         </div>
       </div>
       <div>
-        <input type="submit" class="btn btn-warning btn-circle" value="Sí, borrar la página" />
+        <input type="submit" class="btn btn-warning btn-circle" value="Sí, Borrar Página" />
       </div>
     </form>
   </div>

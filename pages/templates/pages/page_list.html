@@ -3,45 +3,37 @@
 {% block title %}Páginas{% endblock %}
 {% block content %}
 {% include 'pages/includes/pages_menu.html' %}
-<!-- <main role="main">
-  <div class="container mb-4">
-    {% for page in page_list|dictsort:"id" reversed %}
-      <div class="row mt-3">
-        <div class="col-md-9 mx-auto">
-          <h2 class="mb-4">{{page.title}}</h2>
-          <div>
-            <p>{{page.content|striptags|safe|truncatechars:"200"}}</p>
-            <p><a href="{% url 'pages:page' page.id page.title|slugify %}">Leer más</a>
-              {% if request.user.is_staff %}
-                | <a href="{% url 'pages:update' page.id %}">Editar</a>
-                | <a href="{% url 'pages:delete' page.id %}">Borrar</a>
-              {% endif %}
-            </p>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</main> -->
 <section class="module">
   <div class="container">
     <div class="row">
       <div class="col-sm-12">
         {% for page in page_list|dictsort:"id" reversed %}
           <div class="post">
-            <div class="post-header font-alt">
-              <h2 class="post-title">
-                {{page.title}}
+            <div class="post-header font-alt" style="text-transform:none;">
+              <h2 class="post-title" >
+                Título: {{page.title}} <br>
+                Tag principal: {{page.tag}} <br>
+                Número de prioridad: N° {{page.order}}
               </h2>
             </div>
             <div class="post-entry">
-              <p>{{page.content|striptags|safe|truncatechars:"1000"}}</p>
+              {% if page.summary %}
+                <p>{{page.summary|striptags|safe|truncatechars:"1000"}}</p>
+              {% else %}
+                <p>Esta página no tiene resumen.</p>
+              {% endif %}
             </div>
             <div class="post-more">
               <a class="more-link" href="{% url 'pages:page' page.id page.title|slugify %}">Leer más</a>
               {% if request.user.is_staff %}
-                | <a class="more-link" href="{% url 'pages:update' page.id %}">Editar</a>
-                | <a class="more-link" href="{% url 'pages:delete' page.id %}">Borrar</a>
+                | <a class="more-link" href="{% url 'pages:update' page.id %}">Actualizar Página</a>
+                  {% if page.video.all %}
+                    | <a class="more-link" href="{% url 'pages:videos' page.id %}">Actualizar Videos</a>
+                  {% endif %}
+                  {% if page.image.all %}
+                    | <a class="more-link" href="{% url 'pages:images' page.id %}">Actualizar Imágenes</a>
+                  {% endif %}
+                | <a class="more-link" href="{% url 'pages:delete' page.id %}">Borrar Página</a>
               {% endif %}
             </div>
           </div>

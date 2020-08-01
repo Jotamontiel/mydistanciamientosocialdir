@@ -4,3 +4,4 @@ django-ckeditor==5.4.0
 pandas
 folium
 social-auth-app-django
+ipython

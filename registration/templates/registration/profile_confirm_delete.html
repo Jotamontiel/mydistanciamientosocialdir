@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Eliminar Cuenta{% endblock %}
+{% block content %}
+{% include 'pages/includes/pages_menu.html'%}
+<section class="module-small free-trial">
+  <div class="container text-center">
+    <form action="" method="post">{% csrf_token %}
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+          <h4 class="font-alt">
+            ¿Estás seguro de que quieres eliminar tu cuenta <span class="color-golden">"{{ object }}"</span>?
+          </h4>
+        </div>
+      </div>
+      <div>
+        <input type="submit" class="btn btn-warning btn-circle" value="Sí, Eliminar Cuenta" />
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock %}

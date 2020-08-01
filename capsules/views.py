@@ -23,7 +23,11 @@ class CapsuleDetailView(DetailView):
 class CapsuleCreate(CreateView):
     model = Capsule
     form_class = CapsuleForm
-    success_url = reverse_lazy('capsules:capsules')
+    template_name = 'capsules/capsule_form.html'
+
+    def get_success_url(self):
+
+        return reverse_lazy('profile') + '?okCapsuleCreate'
 
     def get_context_data(self, **kwargs):
         context = super(CapsuleCreate, self).get_context_data(**kwargs)
@@ -54,13 +58,14 @@ class CapsuleCreate(CreateView):
 class CapsuleUpdate(UpdateView):
     model = Capsule
     form_class = CapsuleForm
-    template_name_suffix = '_update_form'
+    template_name = 'capsules/capsule_update_form.html'
 
     def get_success_url(self):
-        return reverse_lazy('capsules:update', args=[self.object.id]) + '?ok'
+
+        return reverse_lazy('profile') + '?okCapsuleUpdate'
     
     def get_context_data(self, **kwargs):
-        context = super(PageUpdate, self).get_context_data(**kwargs)
+        context = super(CapsuleUpdate, self).get_context_data(**kwargs)
         context['course_list'] = Course.objects.all()
         context['category_list'] = Category.objects.all()
         
@@ -82,10 +87,14 @@ class CapsuleUpdate(UpdateView):
 
 class CapsuleDelete(DeleteView):
     model = Capsule
-    success_url = reverse_lazy('capsules:capsules')
+    template_name = 'capsules/capsule_confirm_delete.html'
+
+    def get_success_url(self):
+
+        return reverse_lazy('profile') + '?okCapsuleDelete'
 
     def get_context_data(self, **kwargs):
-        context = super(PageDelete, self).get_context_data(**kwargs)
+        context = super(CapsuleDelete, self).get_context_data(**kwargs)
         context['course_list'] = Course.objects.all()
         context['category_list'] = Category.objects.all()
         

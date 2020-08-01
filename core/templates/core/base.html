@@ -144,9 +144,9 @@
                 <li class="nav-item">
                   <a class="btn btn-b btn-round" href="{% url 'profile' %}">Mi Perfil</a>
                 </li>
-                <li class="nav-item">
+                {% comment %} <li class="nav-item">
                   <a class="btn btn-b btn-round" href="{% url 'capsules:capsules' %}">Mi Cápsula</a>
-                </li>
+                </li> {% endcomment %}
                 <li class="nav-item">
                   <a class="btn btn-b btn-round" href="{% url 'logout' %}">Salir</a>
                 </li>
@@ -313,7 +313,7 @@
         var marker1 = new google.maps.Marker({
           position: myCenter1,
           animation: google.maps.Animation.BOUNCE,
-          icon: "{% static 'core/assets/images/map-icon.jpg' %}"
+          icon: "{% static 'core/assets/images/map-icon.png' %}"
         });
         marker1.setMap(map1);
       }

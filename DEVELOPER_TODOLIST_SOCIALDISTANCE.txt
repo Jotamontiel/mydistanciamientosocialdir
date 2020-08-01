@@ -1,0 +1,186 @@
+----------------------------------------------------------------------------------------------------------------
+
+********Capsules [Fase1-WIP]:
+Acomodar template para creación y demás de cápsula
+Mejorar boton para captar la ubicacion en la creación de la cápsula
+capsule_menu.html [WIP]:
+	- 
+
+capsule_confirm_delete.html [WIP]:
+	- 
+
+capsule_detail.html [WIP]:
+	- 
+
+capsule_form.html [WIP]:
+	- 
+
+capsule_list.html [WIP]:
+	- 
+
+capsule_update_form.html [WIP]:
+	- 
+
+----------------------------------------------------------------------------------------------------------------
+
+*Contact [Fase1-WIP]:
+contact.html [WIP]:
+	- Arreglar permisos para mostrar ubicación de recinto matriz en google maps [WIP]
+
+----------------------------------------------------------------------------------------------------------------
+
+*Core [Fase1-WIP]:
+about.html [WIP]:
+	- Arreglar About para hacer que sea escalable con equipo y el CEO. [WIP]
+
+base.html [WIP]:
+	- Acomodar botones del navbar para que sea amigable de forma responsiva en todos los dispositivos [WIP]
+
+display.html [OK]
+
+home.html [WIP]:
+	- Colocar historia para dar contexto al usuario sobre todo lo que trata la plataforma en el home [WIP]
+	- Arreglar mini carousel en el home para que las dimensiones sean iguales en las imagenes de categorías [WIP]
+
+map_display.html [OK]
+
+----------------------------------------------------------------------------------------------------------------
+
+*Courses [Fase1-WIP]:
+courses.html [WIP]:
+	- Arreglar último filtro desplegado de forma automática en la lista de proyectos [WIP]
+
+courses_detail.html [WIP]:
+	- Arreglar visualización de la imagen de ubicación en cuanto a dimensiones [WIP]
+	- Acomodar datos del proyecto, modalidad y ubicación [WIP]
+	- Agregar posibilidad de mostrar video en el detalle de los datos del proyecto [WIP]
+
+----------------------------------------------------------------------------------------------------------------
+
+*Pages [Fase1-WIP]:
+pages_menu.html [WIP]
+	- Mejorar espacios de separacion entre titulo botones y contenido []
+	- Mejorar centricidad de botones []
+	- Mejorar forma e iconos de botones []
+	- Mejorar tamaño de letras []
+
+newspaper_display.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+	- Terminar integración de newspaper []
+
+page_confirm_delete.html [WIP]
+	- Mejorar background []
+	- Mejorar tamaño de letras []
+
+page_detail.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+	- Terminar integración de newspaper []
+
+page_form.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+
+page_image_confirm_delete.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+
+page_image_form.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+
+page_image_list.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+
+page_image_update_form.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+
+page_list.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar centricidad de las cosas []
+	- Mejorar tamaño de letras []         
+
+page_update_form.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+
+page_video_confirm_delete.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+
+page_video_form.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+
+page_video_list.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+
+page_video_update_form.html [WIP]
+	- Mejorar Espacios []
+	- Mejorar tamaño de letras []
+
+----------------------------------------------------------------------------------------------------------------
+
+*Profile [Fase1-WIP]:
+profile_detail.html [WIP]
+	- Mejorar tamaño en la visualización de las fotos [WIP]
+	- Mejorar tamaño de letras [WIP]
+	- Acomodar todos los datos del perfil [WIP]
+	- Agregar SECTION para visualizar los datos de la cápsula del individuo [WIP]
+	- Acomodar datos de la cápsula del individuo [WIP]
+	- Agregar lógica de bloqueo para el perfil y cápsula si el usuario no está registrado [WIP]
+	- Agregar lógica de bloqueo para cápsula si el usuario no ha creado su cápsula [WIP]
+
+profile_list.html [WIP]
+	- Mejorar leyenda de introducción [WIP]
+	- Mejorar tamaño en la visualización de las fotos [WIP]
+	- Mejorar tamaño de letras en nombres y en boton ver detalles [WIP]
+	- Establecer estándar de dimensiones y paginación para cuadros de las fotos [WIP]
+
+----------------------------------------------------------------------------------------------------------------
+
+*Registration [Fase1-WIP]:
+login.html [WIP]
+	- Agregar auth de instagram, facebook y spotify [WIP]
+
+password_change_done.html [OK]
+
+password_change_form.html [OK]
+
+password_reset_complete.html [OK]
+
+password_reset_confirm.html [OK]
+
+password_reset_done.html [OK]
+
+password_reset_form.html [OK]
+
+profile_confirm_delete.hmtl [OK]
+
+profile_email_form.html [OK]
+
+profile_form.html [WIP]
+	- Acomodar los campos, imagen y fases para la creación del perfil [WIP]
+	- formalizar sistema de aceptación de terminos de servicio [WIP]
+
+signup.html [OK]
+
+----------------------------------------------------------------------------------------------------------------
+
+*Services [Fase1-WIP]:
+services.html [WIP]
+	- Arreglar delay de aparición de imagen de servicio [WIP]
+
+----------------------------------------------------------------------------------------------------------------
+
+TODO_GENERICO:
+0) Agregar boton para eliminar perfil o cápsula
+0) Revisar color de los enlaces en el header del admin
+0) Falta agregar al context de algunas vistas en registration para aparezcan los productos en el footer en las páginas faltantes
+0) Colocar las imágenes por defecto para los elementos obligatorios solicitados en la carpeta STATIC
+0) Crear correo corporativo
+0) Crear el resto de pruebas para: proyectos, modalidades, ubicaciones, categorías, servicios, asociados, usuarios, perfiles, cápsulas, páginas, videopágina e imagenpágina.
