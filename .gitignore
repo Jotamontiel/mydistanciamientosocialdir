@@ -137,3 +137,6 @@ dmypy.json
 !**/migrations/__init__.py
 !**/migrations/__pycache__
 !**/__pycache__/__init__.cpython-36.pyc
+
+# TODO List ignore
+**/DEVELOPER_TODOLIST_SOCIALDISTANCE.txt

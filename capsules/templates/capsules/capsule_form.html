@@ -7,11 +7,12 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">
-        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <form id="capsule_create_form" action="" method="post" enctype="multipart/form-data">{% csrf_token %}
           {{ form.name }}
           {{ form.father_last_name }}
           {{ form.mother_last_name }}
           {{ form.nickname }}
+          <a onclick="getLocation()">Obtener mi ubicación</a>
           {{ form.lat }}
           {{ form.lng }}
           {{ form.upload_most_love_photo }}
@@ -23,4 +24,5 @@
     </div>
   </div>
 </section>
+<script src="{% static 'capsules/js/get_geolocation.js' %}"></script>
 {% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'iotmodule/includes/iotmodule_menu.html' %}
+{% load static %}
+{% block title %}Eliminar Dispositivo{% endblock %}
+{% block content %}
+<div class="padding">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box">
+        <div class="box-header">
+          <h2>Eliminar Dispositivo: {{ device.alias }}</h2>
+        </div>
+        <div class="box-divider m-0"></div>
+        <div class="box-body">
+          <form action="" method="post">{% csrf_token %}
+            <div class="form-group row">
+                <label class="col-sm-12 form-control-label">
+                    ¿Estás seguro de que quieres eliminar el dispositivo <span class="color-golden">"{{ device.alias }}"</span>?
+                </label>
+            </div>
+            <button type="submit" class="btn white m-b">Eliminar Dispositivo</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

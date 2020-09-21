@@ -138,9 +138,9 @@
                   <a class="btn btn-b btn-round" href="{% url 'signup' %}">Registro</a>
                 </li>
               {% else %}
-                {% comment %} <li class="nav-item">
+                <li class="nav-item">
                   <a class="btn btn-b btn-round" href="{% url 'iotmodule:iotmodule' %}">Módulo IoT</a>
-                </li> {% endcomment %}
+                </li>
                 <li class="nav-item">
                   <a class="btn btn-b btn-round" href="{% url 'profile' %}">Mi Perfil</a>
                 </li>
@@ -280,26 +280,6 @@
     <script src="{% static 'core/assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js' %}"></script>
     <script src="{% static 'core/assets/js/plugins.js' %}"></script>
     <script src="{% static 'core/assets/js/main.js' %}"></script>
-    <!--
-    Get Position HTML Scripts
-    =============================================
-    -->
-    <script>
-      var x = document.getElementById("demo");
-
-      function getLocation() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition);
-        } else { 
-          x.innerHTML = "Geolocation is not supported by this browser.";
-        }
-      }
-
-      function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude + 
-        "<br>Longitude: " + position.coords.longitude;
-      }
-    </script>
     <!--
     GoogleMap Scripts
     =============================================
