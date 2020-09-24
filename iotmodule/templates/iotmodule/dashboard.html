@@ -37,7 +37,7 @@
         </div>
         <div class="clear">
           <h4 class="m-0 text-lg _300"><b id="display_temp1">-- </b><span class="text-sm">C</span></h4>
-          <small class="text-muted">Promedio: 17 C</small>
+          <small class="text-muted">Promedio: 500 C</small>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
         </div>
         <div class="clear">
           <h4 class="m-0 text-lg _300"><b id="display_temp2">-- </b><span class="text-sm">C</span></h4>
-          <small class="text-muted">Temp Pico: 70 C</small>
+          <small class="text-muted">Temp Pico: 100 C</small>
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@
         </div>
         <div class="clear">
           <h4 class="m-0 text-lg _300"><b id="display_volt">-- </b><span class="text-sm">V</span></h4>
-          <small class="text-muted">Tensión Pico: 5.8 V</small>
+          <small class="text-muted">Tensión Pico: 10 V</small>
         </div>
       </div>
     </div>
@@ -101,6 +101,58 @@
               <input id="input_led2" onchange="process_led2()" type="checkbox">
               <i></i>
             </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="box">
+        <div class="box-header">
+          <h3>Estatus Temperatura1 Computador Jorge</h3>
+          <small>Temperatura GPU en °C</small>
+        </div>
+        <div class="box-body">
+          <div id="placeholder1" ui-jp="plot" ui-refresh="app.setting.color" style="height: 200px; padding: 0px; position: relative;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="box">
+        <div class="box-header">
+          <h3>Estatus Temperatura2 Computador Jorge</h3>
+          <small>Temperatura CPU en °C</small>
+        </div>
+        <div class="box-body">
+          <div id="placeholder2" ui-jp="plot" ui-refresh="app.setting.color" style="height: 200px; padding: 0px; position: relative;">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="box">
+        <div class="box-header">
+          <h3>Estatus Voltaje Computador Jorge</h3>
+          <small>Voltaje en V</small>
+        </div>
+        <div class="box-body">
+          <div id="placeholder3" ui-jp="plot" ui-refresh="app.setting.color" style="height: 200px; padding: 0px; position: relative;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+      <div class="box">
+        <div class="box-header">
+          <h3>Estatus General Jorge</h3>
+          <small>Temperatura Corporal en °C</small>
+        </div>
+        <div class="box-body">
+          <div id="placeholder" ui-jp="plot" ui-refresh="app.setting.color" style="height: 200px; padding: 0px; position: relative;">
           </div>
         </div>
       </div>

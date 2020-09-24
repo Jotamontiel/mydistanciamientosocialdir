@@ -25,6 +25,23 @@
     <link rel="stylesheet" href="{% static 'iotmodule/assets/material-design-icons/material-design-icons.css' %}" type="text/css" />
     <link rel="stylesheet" href="{% static 'iotmodule/assets/bootstrap/dist/css/bootstrap.min.css' %}" type="text/css" />
 
+    <!-- Start IotModule style -->
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/bower-jvectormap/jquery-jvectormap.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/plugins/integration/bootstrap/3/dataTables.bootstrap.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/footable/css/footable.core.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/nestable/jquery.nestable.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/summernote/dist/summernote.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/parsleyjs/dist/parsley.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/select2/dist/css/select2.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/select2-bootstrap-theme/dist/select2-bootstrap.min.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/select2-bootstrap-theme/dist/select2-bootstrap.4.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.dark.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/fullcalendar/dist/fullcalendar.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/jquery/fullcalendar/dist/fullcalendar.theme.css' %}" type="text/css" />
+    <link rel="stylesheet" href="{% static 'iotmodule/libs/js/dropzone/dist/min/dropzone.min.css' %}" type="text/css" />
+    <!-- End IotModule style -->
+
     <!-- build:css {% static 'iotmodule/assets/styles/app.min.css' %} -->
     <link rel="stylesheet" href="{% static 'iotmodule/assets/styles/app.css' %}" type="text/css" />
 
@@ -726,6 +743,44 @@
     <script src="{% static 'iotmodule/libs/jquery/tether/dist/js/tether.min.js' %}"></script>
     <script src="{% static 'iotmodule/libs/jquery/bootstrap/dist/js/bootstrap.js' %}"></script>
 
+    <!-- Start IotModule Scripts -->
+    <script src="{% static 'iotmodule/libs/jquery/jquery.easy-pie-chart/dist/jquery.easypiechart.fill.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/jquery.sparkline/dist/jquery.sparkline.retina.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/flot/jquery.flot.resize.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/flot/jquery.flot.pie.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/flot.tooltip/js/jquery.flot.tooltip.min.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/flot-spline/js/jquery.flot.spline.min.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/flot.orderbars/js/jquery.flot.orderBars.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/bower-jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/bower-jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/bower-jvectormap/jquery-jvectormap-us-aea-en.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/datatables/media/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/plugins/integration/bootstrap/3/dataTables.bootstrap.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/footable/dist/footable.all.min.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/screenfull/dist/screenfull.min.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/html.sortable/dist/html.sortable.min.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/nestable/jquery.nestable.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/summernote/dist/summernote.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/parsleyjs/dist/parsley.min.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/select2/dist/js/select2.min.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/js/moment/moment.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/js/echarts/build/dist/echarts-all.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/js/echarts/build/dist/theme.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/js/echarts/build/dist/jquery.echarts.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/moment/moment.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/fullcalendar/dist/fullcalendar.min.js' %}"></script>
+    <script src="{% static 'iotmodule/scripts/plugins/calendar.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/js/dropzone/dist/min/dropzone.min.js' %}"></script>
+    <!-- End IotModule Scripts -->
+
+    <!-- Start Extras Dynamic Chart -->
+    <script src="{% static 'iotmodule/libs/jquery/flot/jquery.flot.time.js' %}"></script>
+    <script src="{% static 'iotmodule/libs/jquery/flot/jquery.flot.axislabels.js' %}"></script>
+    <!-- End Extras Dynamic Chart -->
+
     <!-- core -->
     <script src="{% static 'iotmodule/libs/jquery/underscore/underscore-min.js' %}"></script>
     <script src="{% static 'iotmodule/libs/jquery/jQuery-Storage-API/jquery.storageapi.min.js' %}"></script>
@@ -747,22 +802,9 @@
     <script src="{% static 'iotmodule/libs/jquery/jquery-pjax/jquery.pjax.js' %}"></script>
     <script src="{% static 'iotmodule/scripts/ajax.js' %}"></script>
 
-    <!-- Real Time Data Script -->
+    <!-- Start Real Time Data Script in MQTT EMQX -->
     <script src="https://unpkg.com/mqtt@4.0.1/dist/mqtt.min.js"></script>
     <script type="text/javascript">
-
-    // Initialize a mqtt variable globally
-    // console.log(mqtt)
-
-    // const mqtt = require('mqtt')
-    // import mqtt from 'mqtt'
-
-
-    /*
-    ********************************
-    ********** Procesos ************
-    ********************************
-    */
 
     function update_values(temp1, temp2, volts){
       $("#display_temp1").html(temp1);
@@ -814,12 +856,6 @@
       }
     }
 
-    /*
-    ********************************
-    ********** Conexión ************
-    ********************************
-    */
-
     // connection option
     const options = {
       clean: true, // retain session
@@ -861,9 +897,97 @@
         })
     })
 
+    var total_cicles = 50;
+    var chart_data = [];
+    var chart_data_temp2 = [];
+    var chart_data_volt = [];
+    var updateIntervalChart = 1000;
+    var chart_now = new Date().getTime();
+
     client.on('message', (topic, message) => {
       console.log('Mensaje recibido bajo el tópico ', topic,' -> ', message.toString())
       process_msg(topic, message);
+
+      if (chart_data.length < total_cicles ) {
+        if (topic == "values") {
+          var mesag = message.toString();
+          var spe = mesag.split(",");
+          var temp_chart1 = parseInt(spe[0]);
+          var temp_chart2 = parseInt(spe[1]);
+          var volt_chart = parseInt(spe[2]);
+          var tempo = [chart_now += updateIntervalChart, temp_chart1];
+          var tempo2 = [chart_now += updateIntervalChart, temp_chart2];
+          var volto = [chart_now += updateIntervalChart, volt_chart];
+          chart_data.push(tempo);
+          chart_data_temp2.push(tempo2);
+          chart_data_volt.push(volto);
+          
+          var dataset_chart = [
+            { 
+              data: chart_data,
+              points: { show: true, radius: 1}, 
+              splines: { show: true, tension: 0.45, lineWidth: 0, fill: 0.4} 
+            }
+          ];
+
+          var dataset_chart2 = [
+            { 
+              data: chart_data_temp2,
+              points: { show: true, radius: 1}, 
+              splines: { show: true, tension: 0.45, lineWidth: 0, fill: 0.4} 
+            }
+          ];
+
+          var dataset_chart3 = [
+            { 
+              data: chart_data_volt,
+              points: { show: true, radius: 1}, 
+              splines: { show: true, tension: 0.45, lineWidth: 0, fill: 0.4} 
+            }
+          ];
+
+          var options_chart = {
+            colors: ['#c20c0c'],
+            series: { shadowSize: 3 },
+            xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
+            yaxis:{ show: true, font: { color: '#ccc' }, min:1},
+            grid: { hoverable: true, clickable: true, borderWidth: 0, color: 'rgba(120,120,120,0.5)' },
+            tooltip: true,
+            tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
+          };
+
+          var options_chart2 = {
+            colors: ['#e3da27'],
+            series: { shadowSize: 3 },
+            xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
+            yaxis:{ show: true, font: { color: '#ccc' }, min:1},
+            grid: { hoverable: true, clickable: true, borderWidth: 0, color: 'rgba(120,120,120,0.5)' },
+            tooltip: true,
+            tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
+          };
+
+          var options_chart3 = {
+            colors: ['#12c20c'],
+            series: { shadowSize: 3 },
+            xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
+            yaxis:{ show: true, font: { color: '#ccc' }, min:1},
+            grid: { hoverable: true, clickable: true, borderWidth: 0, color: 'rgba(120,120,120,0.5)' },
+            tooltip: true,
+            tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
+          };
+
+          $.plot($("#placeholder1"), dataset_chart, options_chart);
+          $.plot($("#placeholder2"), dataset_chart2, options_chart2);
+          $.plot($("#placeholder3"), dataset_chart3, options_chart3);
+
+          if (chart_data.length == total_cicles){
+            chart_data.shift();
+            chart_data_temp2.shift();
+            chart_data_volt.shift();
+          }
+        }
+      }
+
     })
 
     client.on('reconnect', (error) => {
@@ -873,8 +997,52 @@
     client.on('error', (error) => {
         console.log('Connection failed:', error)
     })
-
     </script>
+    <!-- End Real Time Data Script in MQTT EMQX -->
+
+   <!-- Start Dynamic chart -->
+    <script type="text/javascript">
+      var data = [];
+      var dataset;
+      var totalPoints = 500;
+      var updateInterval = 1000;
+      var now = new Date().getTime();
+      function GetData() {
+        data.shift();
+        while (data.length < totalPoints) {    
+          var y = Math.random() * 100;
+          var temp = [now += updateInterval, y];
+          data.push(temp);
+        }
+      }
+      var options_del = {
+        colors: ['#0cc2aa'],
+        series: { shadowSize: 3 },
+        xaxis: { show: true, font: { color: '#ccc' }, position: 'bottom' },
+        yaxis:{ show: true, font: { color: '#ccc' }, min:1},
+        grid: { hoverable: true, clickable: true, borderWidth: 0, color: 'rgba(120,120,120,0.5)' },
+        tooltip: true,
+        tooltipOpts: { content: '%x.0 is %y.4',  defaultTheme: false, shifts: { x: 0, y: -40 } }
+      };
+      $(document).ready(function mytesting () {
+        GetData();
+        dataset = [
+          { 
+            data: data,
+            points: { show: true, radius: 1}, 
+            splines: { show: true, tension: 0.45, lineWidth: 0, fill: 0.4} 
+          }
+        ];
+        $.plot($("#placeholder"), dataset, options_del);
+        function update() {
+          GetData();
+          $.plot($("#placeholder"), dataset, options_del)
+          setTimeout(update, updateInterval);
+        }
+        update();
+      });
+    </script>
+    <!-- End Dynamic chart -->
 
     <!-- endbuild -->
 
